@@ -51,7 +51,118 @@ const scenarios: Scenario[] = [
       }
     ]
   },
-  // Add more scenarios here
+  {
+    id: 2,
+    title: "Heart Attack Response",
+    description: "Someone is experiencing chest pain, shortness of breath, and left arm pain. What should you do first?",
+    options: [
+      {
+        id: 1,
+        text: "Call emergency services (911) immediately",
+        isCorrect: true,
+        feedback: "Correct! Quick medical response is crucial for heart attacks. Every minute counts.",
+        points: 10
+      },
+      {
+        id: 2,
+        text: "Have them lie down and wait to see if it passes",
+        isCorrect: false,
+        feedback: "Never wait with potential heart attack symptoms. Immediate medical attention is essential.",
+        points: -10
+      },
+      {
+        id: 3,
+        text: "Drive them to the hospital yourself",
+        isCorrect: false,
+        feedback: "Emergency services can provide immediate care and are better equipped to handle complications.",
+        points: -5
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Severe Bleeding Control",
+    description: "Someone has cut their arm and is bleeding heavily. What's your immediate response?",
+    options: [
+      {
+        id: 1,
+        text: "Apply direct pressure with a clean cloth",
+        isCorrect: true,
+        feedback: "Correct! Direct pressure is the first step to control bleeding.",
+        points: 10
+      },
+      {
+        id: 2,
+        text: "Apply a tourniquet immediately",
+        isCorrect: false,
+        feedback: "Tourniquets should only be used as a last resort when direct pressure fails.",
+        points: -5
+      },
+      {
+        id: 3,
+        text: "Run the wound under water",
+        isCorrect: false,
+        feedback: "This could increase blood loss. Direct pressure is needed first.",
+        points: -10
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Seizure Management",
+    description: "Someone near you starts having a seizure. What should you do?",
+    options: [
+      {
+        id: 1,
+        text: "Clear the area and protect their head",
+        isCorrect: true,
+        feedback: "Correct! Remove dangerous objects and protect them from injury.",
+        points: 10
+      },
+      {
+        id: 2,
+        text: "Try to hold them still",
+        isCorrect: false,
+        feedback: "Never restrain someone having a seizure. This could cause injury.",
+        points: -10
+      },
+      {
+        id: 3,
+        text: "Put something in their mouth",
+        isCorrect: false,
+        feedback: "Never put anything in the mouth of someone having a seizure. This is dangerous.",
+        points: -10
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Burns Treatment",
+    description: "Someone has received a minor burn from hot water. What's the first step?",
+    options: [
+      {
+        id: 1,
+        text: "Cool the burn under cool running water for 10-20 minutes",
+        isCorrect: true,
+        feedback: "Correct! Cool water helps reduce pain and prevent further damage.",
+        points: 10
+      },
+      {
+        id: 2,
+        text: "Apply ice directly to the burn",
+        isCorrect: false,
+        feedback: "Ice can cause further damage to burned tissue.",
+        points: -5
+      },
+      {
+        id: 3,
+        text: "Apply butter or oil to the burn",
+        isCorrect: false,
+        feedback: "Never apply oily substances to burns. This can trap heat and worsen the injury.",
+        points: -10
+      }
+    ]
+  }
 ];
 
 const Game = () => {
