@@ -7,30 +7,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Game from "./pages/Game";
+import ReminderIcon from './components/ReminderIcon';
+import HealthTips from './components/HealthTips';
 
 const queryClient = new QueryClient();
-
-// Create a separate component for the layout with navigation
-const AppLayout = () => {
-  return (
-    <div className="min-h-screen">
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/game" element={<Game />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
-  );
-};
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <AppLayout />
+          <div className="min-h-screen relative">
+            <Toaster />
+            <Sonner />
+            <ReminderIcon />
+            <HealthTips /> {/* Add this line */}
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/game" element={<Game />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
         </TooltipProvider>
       </BrowserRouter>
     </QueryClientProvider>
