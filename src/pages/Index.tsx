@@ -1,11 +1,12 @@
 import { ChevronRight, Map, User, Phone, MapPin, Loader } from "lucide-react";
-import EmergencyButton from "@/components/EmergencyButton";
-import MedicalCard from "@/components/MedicalCard";
-import LocationTracker from "@/components/LocationTracker";
-import { useEffect, useState } from "react";
-import { toast } from "@/hooks/use-toast";
+import EmergencyButton from "../components/EmergencyButton";
+import MedicalCard from "../components/MedicalCard";
+import LocationTracker from "../components/LocationTracker";
+import React, { useEffect, useState } from "react";
+import { toast } from "../hooks/use-toast";
 import { Search, Upload, X, FileText } from 'lucide-react';
-import GameButton from '@/components/GameButton';
+import { useNavigate } from 'react-router-dom';
+import { Button } from "../components/ui/button";
 
 interface Hospital {
   id: string;
@@ -52,6 +53,8 @@ const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [records, setRecords] = useState<MedicalRecord[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const savedSettings = localStorage.getItem('medicalSettings');
@@ -177,8 +180,14 @@ const Index = () => {
   };
 
   return (
-    <div className="relative">
-      <GameButton />
+    <div className="relative min-h-screen">
+      <Button
+        variant="outline"
+        className="absolute top-4 right-4 z-50"
+        onClick={() => navigate('/game')}
+      >
+        Game
+      </Button>
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
         <div className="container mx-auto px-4 py-8">
           <header className="text-center mb-12 animate-slide-up">

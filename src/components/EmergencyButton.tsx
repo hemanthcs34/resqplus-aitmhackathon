@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Phone } from "lucide-react";
 
 declare global {
